@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercici JavaScript Bàsics</title>
+</head>
+
+<body>
+  <!-- HTML para Exercici 8 -->
+  <label>Please enter number:</label>
+  <br>
+  <input type="number" id="input1">
+  <br><br>
+  <label>Please enter on of the following operators (+ , - , * , / ):</label>
+  <br>
+  <input type="text" id="operator">
+  <br><br>
+  <label>Please enter number:</label>
+  <br>
+  <input type="number" id="input2">
+  <br>
+  <br>
+  <p id="output"></p>
+
+
+  <button onclick="calc()">Click</button>
+
+  <script>
+    ///////////////////////////////////////////////////////// Exercici 1:
+    console.log('Hola mundo');
+
+
+
+    ///////////////////////////////////////////////////////// Exercici 2:
+    // alert('¡Me llamo Sam!');
+
+
+
+    ///////////////////////////////////////////////////////// Exercici 3:
+    let firstName = 'Sam';
+    let lastName = 'Saedy'
+
+    console.log(`${firstName} ${lastName}`);
+
+
+
+    ///////////////////////////////////////////////////////// Exercici 4:
+    let num1 = 34;
+    let num2 = 56;
+    let sum = num1 + num2;
+
+    console.log(`La suma entre ${num1} i ${num2} es ${sum}`);
+
+    ///////////////////////////////////////////////////////// Exercici 5:
+
+    let nota_examen = 4;
+
+    if (nota_examen < 5) {
+      alert('Lo siento, no apto!', nota_examen);
+    } else if (nota_examen >= 5 && nota_examen <= 7) {
+      alert('Apto!', nota_examen);
+    } else if (nota_examen >= 8 && nota_examen <= 10) {
+      alert('Enhorabuena!', nota_examen);
+    } else {
+      alert('nota invalida!');
+    }
+
+    ///////////////////////////////////////////////////////// Exercici 6:
+
+    let color = 'culur';
+    let verde = 'blau';
+
+    console.log(`Tinc un cotxe de ${color} ${verde}`);
+
+    ///////////////////////////////////////////////////////// Exercici 7:
+
+    let arr = ['taula', 'cadira', 'ordinador', 'libreta'];
+
+    for (let i = 0; i < arr.length; i++) {
+      console.log('L\' objecte', arr[i], 'esta a la posicio', i, '.');
+    }
+
+    ///////////////////////////////////////////////////////// Exercici 8:
+
+    function calc() {
+      let input1 = parseInt(document.getElementById('input1').value);
+      let input2 = parseInt(document.getElementById('input2').value);
+      let operator = document.getElementById('operator').value;
+      let message;
+
+      if (operator === "+") {
+        sum();
+      } else if (operator === "-") {
+        min();
+      } else if (operator === "*") {
+        multiply();
+      } else if (operator === "/") {
+        divide();
+      } else {
+        message = 'Please enter a valid operator!';
+      }
+
+      function sum() {
+        message = input1 + input2;
+      }
+      function min() {
+        message = input1 - input2;
+      }
+      function multiply() {
+        message = input1 * input2;
+      }
+      function divide() {
+        message = input1 / input2;
+      }
+
+      document.getElementById('output').innerHTML = message;
+    }
+
+  </script>
+</body>
+
+</html>
